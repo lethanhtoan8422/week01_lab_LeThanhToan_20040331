@@ -1,0 +1,131 @@
+.body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.table{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.table-role{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.thead{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.thead-role{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tbody{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tbody-role{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tr{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.column{
+    font-size: 20px;
+    text-align: center;
+}
+
+.column + .column{
+    border-left: 1px solid black;
+}
+
+.column-id{
+    width: 5%;
+}
+
+.column-name{
+    width: 25%;
+}
+
+.column-phone{
+    width: 15%;
+}
+
+.column-email{
+    width: 25%;
+}
+
+.column-password{
+    width: 20%;
+}
+
+.column-status{
+    width: 10%;
+}
+
+.column-id-role{
+    width: 10%;
+}
+
+.column-name-role{
+    width: 40%;
+}
+
+.column-description{
+    width: 40%;
+}
+
+.column-status-role{
+    width: 10%;
+}
