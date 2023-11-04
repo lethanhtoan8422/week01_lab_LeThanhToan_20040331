@@ -18,3 +18,8 @@
 ![delete2](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/64481e9b-7998-48a3-afe7-45deee8b0ffe)\
 7/ Lọc Account Theo Role CRUD :\
 ![filter](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/b971d9ce-f299-4146-a97d-6cc515457bd0)\
+8/ Cấp Quyền Cho Account :\
+![capquyen](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/8e876e7c-7c81-4ea7-ae45-9035f9885ef8)\
+![capquyen1](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/83fa9df5-e540-43c9-8a93-3b2089bc6e80)\
+![capquyen2](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/488b8434-3004-4724-a2ce-b853acb16a16)\
+
