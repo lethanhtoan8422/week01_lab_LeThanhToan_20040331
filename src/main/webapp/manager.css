@@ -1,0 +1,236 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-crud{
+    width: 98%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.form-info{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.form-content{
+    width: 30%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 30px;
+}
+
+.label{
+    height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.input{
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.btnSubmit{
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-crud-btn{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters{
+    width: 75%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.filter{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.btn-filter{
+    width: 100px;
+    height: 40px;
+}
+
+.form-btn-crud{
+    width: 25%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-submit-insert{
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.btn-submit-delete {
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-image: linear-gradient(315deg, #ffff45 0%, #ff5858 74%);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.table{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.thead{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tbody{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tr{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.column{
+    font-size: 20px;
+    text-align: center;
+}
+
+.column + .column{
+    border-left: 1px solid black;
+}
+
+.column-id{
+    width: 5%;
+}
+
+.column-name{
+    width: 25%;
+}
+
+.column-phone{
+    width: 15%;
+}
+
+.column-email{
+    width: 25%;
+}
+
+.column-password{
+    width: 20%;
+}
+
+.column-status, .column-is-grant{
+    width: 10%;
+}
+
+.column-role, .column-note{
+    width: 30%;
+}
+
+.column-account{
+    position: relative;
+    width: 30%;
+}
+
+.form-id{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.btnAccountID{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-submit-grant{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+}
+

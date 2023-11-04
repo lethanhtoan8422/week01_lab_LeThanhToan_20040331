@@ -9,6 +9,7 @@ import vn.edu.iuh.fit.models.Account;
 import vn.edu.iuh.fit.models.Log;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LogRepository {
     private final EntityManagerFactory entityManagerFactory;
@@ -101,5 +102,24 @@ public class LogRepository {
             transaction.rollback();
         }
         return logs;
+    }
+
+    public Optional<Log> getLogByAccount(long id){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        Log log= null;
+
+        try {
+            transaction.begin();
+            Query query = entityManager.createQuery("SELECT l FROM Log l WHERE l.account.id = :accountID AND l.logOut IS NULL ORDER BY l.id DESC");
+            query.setParameter("accountID", id);
+            log = (Log) query.getResultList().get(0);
+            transaction.commit();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            transaction.rollback();
+        }
+        return Optional.ofNullable(log);
     }
 }

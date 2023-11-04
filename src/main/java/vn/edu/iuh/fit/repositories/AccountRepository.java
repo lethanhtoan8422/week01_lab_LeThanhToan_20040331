@@ -6,6 +6,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 import vn.edu.iuh.fit.db.ConnectionDB;
 import vn.edu.iuh.fit.models.Account;
+import vn.edu.iuh.fit.models.Role;
 
 import java.util.List;
 import java.util.Optional;
@@ -58,9 +59,11 @@ public class AccountRepository {
 
         try {
             transaction.begin();
-            entityManager.remove(entityManager.find(Account.class, id));
+            Query query = entityManager.createQuery("UPDATE Account SET status = -1 WHERE id = :accountID");
+            query.setParameter("accountID", id);
+            int result = query.executeUpdate();
             transaction.commit();
-            return true;
+            return result > 0;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -122,5 +125,24 @@ public class AccountRepository {
             transaction.rollback();
         }
         return Optional.ofNullable(account);
+    }
+
+    public List<Account> getAccountsByRole(long id){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Account> accounts = null;
+
+        try {
+            transaction.begin();
+            Query query = entityManager.createQuery("SELECT a FROM GrantAccess g INNER JOIN Account a INNER JOIN Role r WHERE g.account.id = a.id AND g.role.id = r.id AND g.role.id = :roleID");
+            query.setParameter("roleID", id);
+            accounts = query.getResultList();
+            transaction.commit();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            transaction.rollback();
+        }
+        return accounts;
     }
 }

@@ -26,3 +26,19 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-logout{
+    position: absolute;
+    top: 40%;
+    right: 30%;
+}

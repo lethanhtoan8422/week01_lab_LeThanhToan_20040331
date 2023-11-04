@@ -19,8 +19,7 @@ public class Log {
     @JoinColumn(name = "account_id")
     private Account account;
 
-    public Log(long id, LocalDateTime logIn, LocalDateTime logOut, String note, Account account) {
-        this.id = id;
+    public Log(LocalDateTime logIn, LocalDateTime logOut, String note, Account account) {
         this.logIn = logIn;
         this.logOut = logOut;
         this.note = note;

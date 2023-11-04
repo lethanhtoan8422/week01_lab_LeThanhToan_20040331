@@ -57,7 +57,7 @@ public class GrantAccessRepository {
 
         try {
             transaction.begin();
-            Query query = entityManager.createQuery("SELECT g FROM GrantAccess g WHERE g.account.id = :accountID AND g.role.id = :roleID");
+            Query query = entityManager.createQuery("UPDATE GrantAccess SET isGrant = 0 WHERE account.id = :accountID AND role.id = :roleID");
             query.setParameter("accountID", accountId);
             query.setParameter("roleID", roleId);
             GrantAccess grantAccess = (GrantAccess) query.getSingleResult();

@@ -6,11 +6,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vn.edu.iuh.fit.models.Account;
+import vn.edu.iuh.fit.models.Log;
 import vn.edu.iuh.fit.models.Role;
 import vn.edu.iuh.fit.repositories.AccountRepository;
+import vn.edu.iuh.fit.repositories.LogRepository;
 import vn.edu.iuh.fit.repositories.RoleRepository;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +21,7 @@ import java.util.Optional;
 public class LoginServlet extends HttpServlet {
     AccountRepository accountRepository = new AccountRepository();
     RoleRepository roleRepository = new RoleRepository();
+    LogRepository logRepository = new LogRepository();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -38,6 +42,7 @@ public class LoginServlet extends HttpServlet {
                 req.setAttribute("roles", roles);
                 req.getRequestDispatcher("account.jsp").forward(req, resp);
             }
+            logRepository.create(new Log(LocalDateTime.now(), null, "note", account.get()));
         }
     }
 }

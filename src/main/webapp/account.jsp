@@ -19,7 +19,13 @@
         List<Role> roles = (List<Role>) request.getAttribute("roles");
     %>
     <div class="container">
-        <h1>THÔNG TIN TÀI KHOẢN</h1>
+        <div class="header">
+            <h1>THÔNG TIN TÀI KHOẢN</h1>
+            <form action="dashboard" method="post" class="form-logout">
+                <input type="hidden" name="accountID" value="<%= account.getId()%>"/>
+                <input type="submit" name="btnSubmit" value="Đăng Xuất"/>
+            </form>
+        </div>
         <table class="table">
             <thead class="thead">
                 <tr class="tr">
