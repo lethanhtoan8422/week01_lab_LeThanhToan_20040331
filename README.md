@@ -3,6 +3,7 @@
 2/ Login Success :\
 ![Ảnh2](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/856a442b-f7c9-4854-b1d6-042236150cdc)\
 3/ Login Admin :\
+![login](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/a6c51b63-7416-477d-b13f-a18ced58dd59)\
 ![Ảnh3](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/dcdbe77a-9406-4c9a-9c78-c6b1ec735463)\
 3/ Manager Account :\
 ![manager](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/e178239b-572e-4685-aa0d-8e1c0b6e20e0)\
@@ -22,4 +23,6 @@
 ![capquyen](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/8e876e7c-7c81-4ea7-ae45-9035f9885ef8)\
 ![capquyen1](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/83fa9df5-e540-43c9-8a93-3b2089bc6e80)\
 ![capquyen2](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/488b8434-3004-4724-a2ce-b853acb16a16)\
-
+9/ Ghi Vào Log Sau Đăng Nhập Và Đăng Xuất :\
+![logout](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/24310b79-b77f-443f-beff-17bd1148eeb8)\
+![logout1](https://github.com/lethanhtoan8422/week01_lab_LeThanhToan_20040331/assets/144576370/121ed549-f9ab-4590-8668-55afef85226d)\
