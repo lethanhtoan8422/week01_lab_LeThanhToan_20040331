@@ -51,6 +51,12 @@ public class DashBoardServlet extends HttpServlet {
                 req.getRequestDispatcher("managerAccount.jsp").forward(req,resp);
                 break;
             case "ROLE" :
+                List<Role> rs = roleRepository.getAll();
+                Role roleChosen = new Role("", "", 1);
+                req.setAttribute("btnSubmit", "Thêm");
+                req.setAttribute("role", roleChosen);
+                req.setAttribute("roles", rs);
+                req.getRequestDispatcher("managerRole.jsp").forward(req,resp);
                 break;
             case "GRANT-ACCESS" :
                 List<GrantAccess> grantAccess = grantAccessRepository.getAll();

@@ -27,7 +27,6 @@ public class GrantAccessServlet extends HttpServlet {
         List<Account> acs = accountRepository.getAll();
         List<Role> rls = roleRepository.getAll();
         String btnSubmitFeature = req.getParameter("btnSubmitFeature");
-//        String btnCRUD = req.getParameter("btnCRUD");
         GrantAccess grChosen = new GrantAccess(acs.get(0), rls.get(0), 1, "");
         String btnSubmit = "Thêm";
 
@@ -37,24 +36,42 @@ public class GrantAccessServlet extends HttpServlet {
             int isGrant = Integer.parseInt(req.getParameter("selectIsGrant"));
             String note = req.getParameter("note");
 
-            GrantAccess grant = new GrantAccess(accountRepository.getByID(Long.parseLong(account)).get(), roleRepository.getByID(Long.parseLong(role)), isGrant, note);
+            GrantAccess grant = new GrantAccess(accountRepository.getByID(Long.parseLong(account)).get(), roleRepository.getByID(Long.parseLong(role)).get(), isGrant, note);
             boolean result = grantAccessRepository.create(grant);
             if(result){
                 grantAccess = grantAccessRepository.getAll();
             }
         }
         else if(btnSubmitFeature.equalsIgnoreCase("selectRow")){
+            btnSubmit = "Cập Nhật";
             String accountID = req.getParameter("accountID");
             String roleID = req.getParameter("roleID");
             int isGrant = Integer.parseInt(req.getParameter("isGrant"));
             String note = req.getParameter("note");
             grChosen.setAccount(accountRepository.getByID(Long.parseLong(accountID)).get());
-            grChosen.setRole(roleRepository.getByID(Long.parseLong(roleID)));
+            grChosen.setRole(roleRepository.getByID(Long.parseLong(roleID)).get());
             grChosen.setIsGrant(isGrant);
             grChosen.setNote(note);
         }
+        else if(btnSubmitFeature.equalsIgnoreCase("Cập Nhật")){
+            long accountID = Long.parseLong(req.getParameter("selectAccount"));
+            long roleID = Long.parseLong(req.getParameter("selectRole"));
+            int isGrant = Integer.parseInt(req.getParameter("selectIsGrant"));
+            String note = req.getParameter("note");
+
+            GrantAccess grantAs = grantAccessRepository.getByID(grChosen.getAccount().getId(), grChosen.getRole().getId());
+            grantAs.setAccount(accountRepository.getByID(accountID).get());
+            grantAs.setRole(roleRepository.getByID(roleID).get());
+            grantAs.setNote(note);
+            grantAs.setIsGrant(isGrant);
+
+            boolean result = grantAccessRepository.update(grantAs);
+            if(result){
+                grantAccess = grantAccessRepository.getAll();
+            }
+        }
         else if(btnSubmitFeature.equalsIgnoreCase("XÓA")){
-            boolean rs = grantAccessRepository.delete(Long.parseLong(req.getParameter("accountID")),Long.parseLong(req.getParameter("roleID")));
+            boolean rs = grantAccessRepository.delete(Long.parseLong(req.getParameter("accountID")), Long.parseLong(req.getParameter("roleID")));
             if(rs){
                 grantAccess = grantAccessRepository.getAll();
             }

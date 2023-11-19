@@ -72,7 +72,7 @@
             <% } %>
         </form>
         <div class="filter-crud-btn">
-            <form action="account" method="post" class="form-btn-crud">
+            <form action="grant-access" method="post" class="form-btn-crud">
                 <% if(btnSubmit.equalsIgnoreCase("Thêm")) {%>
                 <input type="submit" name="btnSubmitFeature" value="THÊM" class="btn-submit-insert" disabled="disabled"
                        style="background-color: rgb(128,128,128)"/>

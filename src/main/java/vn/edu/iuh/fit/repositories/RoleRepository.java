@@ -9,6 +9,7 @@ import vn.edu.iuh.fit.models.Account;
 import vn.edu.iuh.fit.models.Role;
 
 import java.util.List;
+import java.util.Optional;
 
 public class RoleRepository {
     private final EntityManagerFactory entityManagerFactory;
@@ -57,9 +58,11 @@ public class RoleRepository {
 
         try {
             transaction.begin();
-            entityManager.remove(entityManager.find(Role.class, id));
+            Query query = entityManager.createQuery("UPDATE Role SET status = -1 WHERE id = :roleID");
+            query.setParameter("roleID", id);
+            int rs = query.executeUpdate();
             transaction.commit();
-            return true;
+            return rs > 0;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -68,7 +71,7 @@ public class RoleRepository {
         return false;
     }
 
-    public Role getByID(long id){
+    public Optional<Role> getByID(long id){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         Role role = null;
@@ -82,7 +85,7 @@ public class RoleRepository {
             e.printStackTrace();
             transaction.rollback();
         }
-        return role;
+        return Optional.ofNullable(role);
     }
 
     public List<Role> getAll(){
